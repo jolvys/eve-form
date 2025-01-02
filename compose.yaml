@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  db:
+    image: postgres:17.2
+    restart: always
+    volumes:
+      - eve-form:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: eve-form
+volumes:
+  eve-form:
